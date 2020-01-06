@@ -1,0 +1,19 @@
+query CheckProduct($product: ProductCheckInput!) {
+    check(product: $product) {
+        success
+        product {
+            services {
+                ...on AService {
+                    dooms {
+                        code
+                        loads {
+                            code
+                        }
+                    }
+                }
+            }
+            notes
+            rules
+        }
+    }
+}

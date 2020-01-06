@@ -2,40 +2,39 @@ schema {
     query: Query
 }
 
-input SearchCriteriaInput {
-    destination: String!
-}
-
-enum ServiceType {
-    A_SERVICE
-    B_SERVICE
+type Query {
+    check(
+        product: ProductCheckInput!
+    ): ProductCheckResult!
 }
 
 interface Service {
+    id: ID!
     productId: String!
-    type: ServiceType!
 }
 
 type AService implements Service {
+    id: ID!
     productId: String!
-    someA: String!
-    type: ServiceType!
+    dooms: [[ADoom!]!]!
 }
 
-type BService implements Service {
-    productId: String!
-    someB: String!
-    type: ServiceType!
+type ALoad {
+    code: String!
+}
+
+type ADoom {
+    loads: [ALoad!]!
+    code: String!
+    description: String
+    searchCount: Int
 }
 
 type Product {
     rules: [String!]!
+    id: ID!
     notes: [String!]!
     services: [Service!]!
-}
-
-input ProductCheckInput {
-    searchId: String!
 }
 
 type ProductCheckResult {
@@ -43,8 +42,9 @@ type ProductCheckResult {
     success: Boolean!
 }
 
-type Query {
-    check(product: ProductCheckInput!): ProductCheckResult!
+input ProductCheckInput {
+    searchId: String!
+    searchProductId: String!
 }
 
 scalar Date
