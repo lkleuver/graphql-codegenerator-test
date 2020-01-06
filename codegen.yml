@@ -1,0 +1,48 @@
+overwrite: true
+config:
+  namingConvention:
+    typeNames: change-case#pascalCase
+    transformUnderscore: true
+schema:
+  - ./schema.api.graphql
+  - ./schema.client.graphql
+generates:
+  types/types.ts:
+    documents:
+      - './graphql/operations/**/*.graphql'
+    schema:
+      - ./schema.api.graphql
+      - ./schema.client.graphql
+    plugins:
+      - typescript
+  types/:
+    documents:
+      - './graphql/operations/**/*.graphql'
+    schema:
+      - ./schema.api.graphql
+      - ./schema.client.graphql
+    config:
+      noNamespaces: true
+      withHooks: true
+      withComponent: true
+      withHOC: false
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.tsx
+      baseTypesPath: types.ts
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+  types/resolversTypes.ts:
+    config:
+      contextType: ./graphql/contexts/ClientContext#ClientContext
+    schema:
+      - ./schema.client.graphql
+    plugins:
+      - typescript
+      - typescript-resolvers
+  graphql/introspectionResult.generated.ts:
+    schema:
+      - ./schema.api.graphql
+    plugins:
+      - fragment-matcher

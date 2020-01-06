@@ -1,0 +1,54 @@
+schema {
+    query: Query
+}
+
+input SearchCriteriaInput {
+    destination: String!
+}
+
+enum ServiceType {
+    A_SERVICE
+    B_SERVICE
+}
+
+interface Service {
+    productId: String!
+    type: ServiceType!
+}
+
+type AService implements Service {
+    productId: String!
+    someA: String!
+    type: ServiceType!
+}
+
+type BService implements Service {
+    productId: String!
+    someB: String!
+    type: ServiceType!
+}
+
+type Product {
+    rules: [String!]!
+    notes: [String!]!
+    services: [Service!]!
+}
+
+input ProductCheckInput {
+    searchId: String!
+}
+
+type ProductCheckResult {
+    product: Product
+    success: Boolean!
+}
+
+type Query {
+    check(product: ProductCheckInput!): ProductCheckResult!
+}
+
+scalar Date
+
+scalar DateTime
+
+scalar Time

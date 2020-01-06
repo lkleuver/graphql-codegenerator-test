@@ -1,0 +1,11 @@
+type Auth {
+    accessToken: String!
+}
+
+type Client {
+    auth: Auth
+}
+
+extend type Query {
+    client: Client!
+}
