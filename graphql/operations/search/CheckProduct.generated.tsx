@@ -2,7 +2,6 @@ import * as Types from '../../../types/types';
 
 import { AServiceFragmentFragment } from './AServiceFragment.generated';
 import gql from 'graphql-tag';
-import { AServiceFragmentFragmentDoc } from './AServiceFragment.generated';
 import * as React from 'react';
 import * as ApolloReactCommon from '@apollo/react-common';
 import * as ApolloReactComponents from '@apollo/react-components';
