@@ -3,6 +3,7 @@ query CheckProduct($product: ProductCheckInput!) {
         success
         product {
             services {
+                ...AServiceFragment
                 ...on AService {
                     dooms {
                         code

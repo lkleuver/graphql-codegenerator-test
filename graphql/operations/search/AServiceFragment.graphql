@@ -1,0 +1,4 @@
+fragment AServiceFragment on AService {
+    id
+    productId
+}
