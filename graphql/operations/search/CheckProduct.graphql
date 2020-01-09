@@ -2,6 +2,8 @@ query CheckProduct($product: ProductCheckInput!) {
     check(product: $product) {
         success
         product {
+            notes
+            rules
             services {
                 ...AServiceFragment
                 ...on AService {
@@ -13,8 +15,6 @@ query CheckProduct($product: ProductCheckInput!) {
                     }
                 }
             }
-            notes
-            rules
         }
     }
 }
