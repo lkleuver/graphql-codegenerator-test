@@ -1,0 +1,11 @@
+mutation SetFieldStatus($test: String!) {
+  insert_field_meta_one(test: $test) {
+    ...FieldMeta
+  }
+}
+
+mutation AddFieldComment($comment: String!) {
+  insert_field_comment_one(comment: $comment) {
+    ...FieldComment
+  }
+}

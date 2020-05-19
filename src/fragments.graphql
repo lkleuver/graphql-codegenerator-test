@@ -1,0 +1,11 @@
+fragment FieldMeta on field_meta {
+  __typename
+  id
+  status
+}
+
+fragment FieldComment on field_comment {
+  __typename
+  id
+  comment
+}

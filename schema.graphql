@@ -1,0 +1,29 @@
+schema {
+  query: Query
+}
+
+type Query {
+  field_meta: field_meta
+  field_status: field_status
+  field_comment: [field_comment]
+}
+
+type Mutation {
+  insert_field_meta_one(test: String!): field_meta
+  insert_field_comment_one(comment: String!): field_comment
+}
+
+type field_meta {
+  id: Int!
+  status: String!
+}
+
+type field_comment {
+  id: Int!
+  comment: String
+}
+
+type field_status {
+  value: String
+  description: String
+}

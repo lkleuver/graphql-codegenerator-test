@@ -1,0 +1,19 @@
+query FieldMeta {
+  field_meta {
+    ...FieldMeta
+  }
+}
+
+query FieldStatusOptions {
+  field_status {
+    __typename
+    value
+    description
+  }
+}
+
+query FieldComments {
+  field_comment {
+    ...FieldComment
+  }
+}
