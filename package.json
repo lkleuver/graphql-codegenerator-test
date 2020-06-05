@@ -8,13 +8,13 @@
     "gen": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.14.0",
-    "@graphql-codegen/fragment-matcher": "1.14.0",
-    "@graphql-codegen/near-operation-file-preset": "1.14.0",
-    "@graphql-codegen/typescript": "1.14.0",
-    "@graphql-codegen/typescript-operations": "1.14.0",
-    "@graphql-codegen/typescript-react-apollo": "1.14.0",
-    "@graphql-codegen/typescript-resolvers": "1.14.0",
+    "@graphql-codegen/cli": "1.15.1-alpha-12a4da72.33+12a4da72",
+    "@graphql-codegen/fragment-matcher": "1.15.1-alpha-12a4da72.33+12a4da72",
+    "@graphql-codegen/near-operation-file-preset": "1.15.1-alpha-12a4da72.33+12a4da72",
+    "@graphql-codegen/typescript": "1.15.1-alpha-12a4da72.33+12a4da72",
+    "@graphql-codegen/typescript-operations": "1.15.1-alpha-12a4da72.33+12a4da72",
+    "@graphql-codegen/typescript-react-apollo": "1.15.1-alpha-12a4da72.33+12a4da72",
+    "@graphql-codegen/typescript-resolvers": "1.15.1-alpha-12a4da72.33+12a4da72",
     "apollo-cache-inmemory": "^1.6.6"
   },
   "dependencies": {
